@@ -1,0 +1,35 @@
+{
+  "updatedAt": "2026-10-26",
+  "projects": [
+    {
+      "id": "learnAgent",
+      "name": "learnAgent",
+      "description": "三个月 AI Agent 学习计划，记录理解、实践与可复现的学习成果。",
+      "status": "not-started",
+      "nextAction": "打开现有学习计划，确认第一个学习任务，并写下它的验收条件。"
+    },
+    {
+      "id": "mealAgent",
+      "name": "mealAgent",
+      "description": "真实业务开发项目，用实际需求与验证结果推动开发。",
+      "status": "not-started",
+      "nextAction": "整理一个真实业务场景，写清使用者、当前问题和期望结果。"
+    }
+  ],
+  "records": [
+    {
+      "id": "journey-direction",
+      "date": "2026-10-26",
+      "projectId": null,
+      "kind": "writing-planning",
+      "title": "确定 Agent Journey 项目方向",
+      "summary": "完成个人反思文章及后记，提出并确定用个人网站记录真实成长与学习成果。此项属于写作与规划成果，不计入编码任务。",
+      "verification": {
+        "method": "作者确认",
+        "result": "作者确认文章与后记已完成，项目方向已确定。公开页面仅保留成果摘要。"
+      },
+      "evidence": []
+    }
+  ],
+  "skills": []
+}

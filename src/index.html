@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agent Journey：记录真实的学习与业务成果，保留证据，找到下一个具体动作。">
+  <title>Agent Journey · 一步一步，留下真实的成果</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+  <header class="site-header wrap"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">aj.</span> Agent Journey</a><nav aria-label="主导航"><a href="#projects">项目</a><a href="#timeline">成果时间线</a><a href="#skills">已验证能力</a></nav></header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="title"><div class="eyebrow">A PERSONAL JOURNEY / 从真实开始</div><h1 id="title">每一步，<br>都有<span>迹可循。</span></h1><p class="intro">记录学到的、做成的，以及下一步。<br>不追赶连续天数，只积累真实成果。</p><a class="button" href="#projects">找到下一个具体动作 <span aria-hidden="true">↗</span></a><div class="hero-note"><span class="dot"></span> 允许停下来，也随时可以继续。</div></section>
+    <section id="projects" class="section"><div class="section-heading"><div><span class="eyebrow">01 / IN FOCUS</span><h2>正在生长的项目</h2></div><p>从零开始，如实记录。</p></div><div class="project-grid">{{projects}}</div></section>
+    <section id="timeline" class="section"><div class="section-heading"><div><span class="eyebrow">02 / THE EVIDENCE</span><h2>留下来的成果</h2></div><p>{{count}} 条已确认成果 · 写作与编码分别记录</p></div><ol class="timeline">{{timeline}}</ol></section>
+    <section id="skills" class="section"><div class="section-heading"><div><span class="eyebrow">03 / VERIFIED ABILITIES</span><h2>经过验证的能力</h2></div><p>有实践，有证据，再写下来。</p></div>{{skills}}</section>
+    <aside class="principle"><span aria-hidden="true">✳</span><p>休息不会抹去已经走过的路。<br><strong>这里没有清零、等级或虚构的成就。</strong></p></aside>
+  </main>
+  <footer class="wrap"><span>Agent Journey <small>v0.1</small></span><span>记录更新于 {{updated}} · 只公开成果摘要</span></footer>
+</body>
+</html>
