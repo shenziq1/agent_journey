@@ -27,7 +27,7 @@ test('构建输出包含项目、成果、能力区及本地样式，无模板�
   const result = spawnSync(process.execPath, ['scripts/build.mjs'], { cwd: new URL('../', import.meta.url), encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr);
   const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
-  for (const text of ['learnAgent', 'mealAgent', 'id="projects"', 'id="timeline"', 'id="skills"']) assert.ok(html.includes(text), text);
+  for (const text of ['learnAgent', 'mealAgent', 'id="preface"', '非原文全文', 'id="projects"', 'id="timeline"', 'id="skills"']) assert.ok(html.includes(text), text);
   assert.doesNotMatch(html, /\{\{\w+\}\}/);
   assert.ok((await readFile(new URL('../dist/style.css', import.meta.url))).length > 0);
 });

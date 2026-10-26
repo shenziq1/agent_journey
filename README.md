@@ -99,11 +99,15 @@ npm run check    # 全部验证、测试与构建
 
 ## 无需 VPS：发布到 GitHub Pages
 
-仓库已提供手动发布工作流 `.github/workflows/pages.yml`，不会在普通 push 时自动部署。
+仓库已提供发布工作流 `.github/workflows/pages.yml`：推送到 main 后自动验证、构建并部署，也支持手动触发。
 
 1. 在 GitHub 仓库的 Settings → Pages → Build and deployment，将 Source 设置为 GitHub Actions。免费 GitHub 账户通常需要公开仓库；私有仓库的 Pages 可用性取决于套餐。发布前检查仓库及网站内容是否适合公开。
 2. 在 Actions 页面选择 Publish to GitHub Pages → Run workflow，选择 main 并运行。
 3. 工作流会验证数据、运行测试并构建，然后将 dist/ 发布至 Pages。成功后在部署作业或 Settings → Pages 查看实际网址。默认项目网址为 https://shenziq1.github.io/agent_journey/ 。
-4. 后续修改数据并推送到 main 后，再运行该工作流更新网站。无需服务器、SSH 密钥或额外 npm 依赖。
+4. 后续修改数据并推送到 main 后，工作流会自动更新网站。无需服务器、SSH 密钥或额外 npm 依赖。
 
 这是可选的公开托管方式，不会连接 RackNerd VPS；VPS 部署方案仍见上一节。
+
+## 修改前言
+
+`data/preface.json` 独立保存前言标题、副标题、整理说明和正文段落。当前为随笔与后记的公开整理节选，非原文全文；没有纳入私人生活与情感细节。修改后运行 `npm run check` 并重启本地服务。原始私人 DOCX 不应提交到公开仓库，也不应包含在 `dist/` 中。前言是文章内容，不会增加项目完成数量或已验证能力。
