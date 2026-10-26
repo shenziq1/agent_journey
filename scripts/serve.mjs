@@ -6,7 +6,7 @@ const build = spawnSync(process.execPath, [fileURLToPath(new URL('./build.mjs', 
 if (build.status !== 0) process.exit(build.status ?? 1);
 const port = Number(process.env.PORT || 3000);
 const files = { '/': ['index.html', 'text/html; charset=utf-8'], '/index.html': ['index.html', 'text/html; charset=utf-8'], '/style.css': ['style.css', 'text/css; charset=utf-8'] };
-for (const [name, type] of [['original.html', 'text/html; charset=utf-8'], ['original.mjs', 'text/javascript; charset=utf-8'], ['article-crypto.mjs', 'text/javascript; charset=utf-8'], ['original.encrypted.json', 'application/json']]) files[`/${name}`] = [name, type];
+for (const [name, type] of [['admin.mjs', 'text/javascript; charset=utf-8'], ['article-crypto.mjs', 'text/javascript; charset=utf-8'], ['original.encrypted.json', 'application/json']]) files[`/${name}`] = [name, type];
 const server = createServer(async (req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
   const file = files[pathname];

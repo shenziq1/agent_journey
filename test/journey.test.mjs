@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { readFile } from 'node:fs/promises';
+import { readFile, access } from 'node:fs/promises';
 import { loadData, validate } from '../scripts/validate.mjs';
 
 const data = await loadData();
@@ -29,5 +29,11 @@ test('构建输出包含项目、成果、能力区及本地样式，无模板�
   const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
   for (const text of ['learnAgent', 'mealAgent', 'id="preface"', '非原文全文', 'id="projects"', 'id="timeline"', 'id="skills"']) assert.ok(html.includes(text), text);
   assert.doesNotMatch(html, /\{\{\w+\}\}/);
+  assert.ok(html.includes('id="admin-toggle"'));
+  assert.ok(html.includes('id="admin-dialog"'));
+  assert.ok(!html.includes('href="./original.html"'));
+  await access(new URL('../dist/admin.mjs', import.meta.url));
+  await assert.rejects(access(new URL('../dist/original.html', import.meta.url)));
+  await assert.rejects(access(new URL('../dist/original.mjs', import.meta.url)));
   assert.ok((await readFile(new URL('../dist/style.css', import.meta.url))).length > 0);
 });

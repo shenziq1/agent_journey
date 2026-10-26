@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Agent Journey：记录真实的学习与业务成果，保留证据，找到下一个具体动作。">
   <title>Agent Journey · 一步一步，留下真实的成果</title>
+  <script type="module" src="./admin.mjs"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <a class="skip" href="#main">跳到主要内容</a>
-  <header class="site-header wrap"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">aj.</span> Agent Journey</a><nav aria-label="主导航"><a href="#preface">前言</a><a href="#projects">项目</a><a href="#timeline">成果时间线</a><a href="#skills">已验证能力</a></nav></header>
+  <header class="site-header wrap"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true">aj.</span> Agent Journey</a><div class="header-actions"><nav aria-label="主导航"><a href="#preface">前言</a><a href="#projects">项目</a><a href="#timeline">成果时间线</a><a href="#skills">已验证能力</a></nav><button id="admin-toggle" class="admin-toggle" type="button" hidden>管理员模式</button></div></header>
   <main id="main" class="wrap">
     <section class="hero" aria-labelledby="title"><div class="eyebrow">A PERSONAL JOURNEY / 从真实开始</div><h1 id="title">每一步，<br>都有<span>迹可循。</span></h1><p class="intro">记录学到的、做成的，以及下一步。<br>不追赶连续天数，只积累真实成果。</p><a class="button" href="#projects">找到下一个具体动作 <span aria-hidden="true">↗</span></a><div class="hero-note"><span class="dot"></span> 允许停下来，也随时可以继续。</div></section>
     <section id="preface" class="section preface" aria-labelledby="preface-title">{{preface}}</section>
@@ -18,6 +19,17 @@
     <section id="skills" class="section"><div class="section-heading"><div><span class="eyebrow">03 / VERIFIED ABILITIES</span><h2>经过验证的能力</h2></div><p>有实践，有证据，再写下来。</p></div>{{skills}}</section>
     <aside class="principle"><span aria-hidden="true">✳</span><p>休息不会抹去已经走过的路。<br><strong>这里没有清零、等级或虚构的成就。</strong></p></aside>
   </main>
+  <dialog id="admin-dialog" class="unlock-card" aria-labelledby="unlock-title">
+    <div class="dialog-heading"><h2 id="unlock-title">管理员模式</h2><button id="admin-cancel" type="button" aria-label="关闭密码窗口">×</button></div>
+    <p>输入管理员密码，在当前页面阅读作者原文。</p>
+    <form id="unlock-form">
+      <label for="password">管理员密码</label>
+      <input id="password" name="password" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" required aria-describedby="password-note unlock-status">
+      <p id="password-note">密码中的空格会原样保留。刷新或离开页面后自动退出。</p>
+      <button class="button" type="submit">进入管理员模式</button>
+      <p id="unlock-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
   <footer class="wrap"><span>Agent Journey <small>v0.1</small></span><span>记录更新于 {{updated}} · 只公开成果摘要</span></footer>
 </body>
 </html>
